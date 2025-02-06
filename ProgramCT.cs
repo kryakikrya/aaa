@@ -6,15 +6,15 @@ namespace ConsoleApp4
     {
         static void Main()
         {
-            Square a = new Square(10, 0, 0, 0, 0, 0, 0);
+            Square a = new Square(10);
             Console.WriteLine(a.CountArea());
             ConvexQuadrilateral b = new ConvexQuadrilateral(10, 10, 10, 10, 90, 10, 10);
             Console.WriteLine(b.CountArea());
             Parallelogram c = new Parallelogram(10, 10, 10, 10, 10, 10, 10);
             Console.WriteLine(c.CountArea());
-            Rhombus d = new Rhombus(10, 10, 10, 10, 10, 10, 10);
+            Rhombus d = new Rhombus(10, 10, 10, 10, 10);
             Console.WriteLine(d.CountArea());
-            Rectangle e = new Rectangle(10, 10, 10, 10, 10, 10, 10);
+            Rectangle e = new Rectangle(10, 10);
             Console.WriteLine(e.CountArea());
             RandomTetragon m = new RandomTetragon(10, 10, 10, 10, 10, 10, 10);
             Console.WriteLine(m.CountArea());
@@ -47,7 +47,7 @@ namespace ConsoleApp4
     internal class Square : Tetragon
     {
 
-        public Square(float a, float b, float c, float d, float angle, float d1, float d2) : base(a, b, c, d, angle, d1, d2)
+        public Square(float a) : base(a, a, a, a, 90, a, a)
         {
 
         }
@@ -91,7 +91,7 @@ internal class Parallelogram : Tetragon
 }
 internal class Rhombus : Tetragon
 {
-    public Rhombus(float a, float b, float c, float d, float angle, float d1, float d2) : base(a, b, c, d, angle, d1, d2)
+    public Rhombus(float a, float b, float angle, float d1, float d2) : base(a, b, a, b, 90, d1, d2)
         {
     }
     public override float CountPerimeter()
@@ -105,7 +105,7 @@ internal class Rhombus : Tetragon
 }
 internal class Rectangle : Tetragon
 {
-    public Rectangle(float a, float b, float c, float d, float angle, float d1, float d2) : base(a, b, c, d, angle, d1, d2)
+    public Rectangle(float a, float b) : base(a, b, a, b, 90, a, a)
     {
     }
     public override float CountPerimeter()
